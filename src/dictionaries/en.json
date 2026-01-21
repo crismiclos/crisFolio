@@ -11,15 +11,23 @@
             "unseen": "THE UNSEEN",
             "subtitle": "A journey through light, shadow, and the moments between."
         },
+        "brands": {
+            "title": "Trusted by"
+        },
         "manifesto": {
             "title": "Manifesto",
             "text": "Photography is not about seeing, it's about feeling. If you can't feel what you're looking at, then you're never going to get others to feel anything when they look at your pictures."
         },
         "featured": {
-            "title": "Featured Collections"
+            "title": "Featured Collections",
+            "view_all": "View all work"
         },
         "recognition": {
             "title": "Recognition"
+        },
+        "cta": {
+            "title": "Ready to bring your vision to life?",
+            "button": "Request a Quote"
         }
     },
     "collections": {

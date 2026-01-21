@@ -61,7 +61,49 @@
     transform: rotate(0deg);
 }
 
+/* Brands Section */
+.brands {
+    padding: 10rem 0;
+    overflow: hidden;
+    background: #000;
+}
+
+.brandsMarquee {
+    display: flex;
+    gap: 4rem;
+    width: max-content;
+    animation: marquee 30s linear infinite;
+}
+
+.brandItem {
+    font-family: var(--font-outfit), sans-serif;
+    font-size: 2rem;
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    opacity: 0.3;
+    transition: var(--transition);
+}
+
+.brandItem:hover {
+    opacity: 1;
+    color: var(--accent-color);
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
 .manifesto {
+    padding: 10rem 5vw;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     text-align: center;
 }
@@ -76,8 +118,13 @@
 
 .manifestoText {
     font-size: clamp(1.5rem, 4vw, 3rem);
-    max-width: 800px;
+    max-width: 850px;
     line-height: 1.2;
+    font-weight: 300;
+}
+
+.featured {
+    padding: 5rem 5vw 10rem;
 }
 
 .featuredGrid {
@@ -89,36 +136,100 @@
 
 .featuredItem {
     position: relative;
-    transition: var(--transition);
+    cursor: pointer;
 }
 
-.featuredImage {
+.featuredImageWrapper {
     width: 100%;
     aspect-ratio: 4/5;
     background: var(--glass);
     border: 1px solid var(--border);
+    overflow: hidden;
     transition: var(--transition);
+    position: relative;
+}
+
+.featuredImage {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #111, #1a1a1a);
+    transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
 .featuredItem:hover .featuredImage {
+    transform: scale(1.05);
+}
+
+.featuredItem:hover .featuredImageWrapper {
     border-color: var(--accent-color);
-    transform: scale(0.98);
 }
 
 .featuredMeta {
     margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 
 .featuredMeta h3 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    font-family: var(--font-outfit), sans-serif;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
 }
 
-.featuredMeta p {
-    font-size: 0.8rem;
+.viewWork {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
     color: var(--muted-color);
-    margin-top: 0.5rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid transparent;
+    transition: var(--transition);
+}
+
+.featuredItem:hover .viewWork {
+    color: white;
+    border-color: white;
+}
+
+/* Call to Action */
+.cta {
+    padding: 15rem 5vw;
+    text-align: center;
+    background: linear-gradient(to bottom, transparent, #0f0f0f);
+}
+
+.ctaTitle {
+    font-family: var(--font-outfit), sans-serif;
+    font-size: clamp(2rem, 6vw, 5rem);
+    text-transform: uppercase;
+    max-width: 900px;
+    margin: 0 auto 4rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.ctaButton {
+    display: inline-block;
+    padding: 1.5rem 4rem;
+    background: white;
+    color: black;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.ctaButton:hover {
+    background: var(--accent-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.recognition {
+    padding: 10rem 5vw;
 }
 
 .awardsList {
@@ -131,13 +242,13 @@
 .award {
     display: grid;
     grid-template-columns: 100px 1fr 1fr;
-    padding: 2rem 0;
+    padding: 2.5rem 0;
     border-bottom: 1px solid var(--border);
     transition: var(--transition);
 }
 
 .award:hover {
-    border-color: var(--accent-color);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 .award .year {
@@ -148,21 +259,34 @@
 .award .name {
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    font-weight: 400;
 }
 
 .award .place {
     text-align: right;
     color: var(--muted-color);
+    font-weight: 200;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .hero {
         grid-template-columns: 1fr;
         text-align: center;
+        padding-top: 4rem;
+    }
+
+    .heroContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .indent {
         padding-left: 0;
+    }
+
+    .heroImage {
+        height: 60vh;
     }
 
     .featuredGrid {
@@ -172,7 +296,6 @@
     .award {
         grid-template-columns: 1fr;
         gap: 1rem;
-        text-align: left;
     }
 
     .award .place {

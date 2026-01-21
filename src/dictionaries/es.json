@@ -11,15 +11,23 @@
             "unseen": " LO INVISIBLE",
             "subtitle": "Un viaje a través de la luz, las sombras y los momentos intermedios."
         },
+        "brands": {
+            "title": "Clientes"
+        },
         "manifesto": {
             "title": "Manifiesto",
             "text": "La fotografía no se trata de ver, sino de sentir. Si no puedes sentir lo que estás mirando, nunca lograrás que otros sientan nada al ver tus fotos."
         },
         "featured": {
-            "title": "Colecciones Destacadas"
+            "title": "Colecciones Destacadas",
+            "view_all": "Ver todo el trabajo"
         },
         "recognition": {
             "title": "Reconocimiento"
+        },
+        "cta": {
+            "title": "¿Listo para dar vida a tu visión?",
+            "button": "Solicitar Presupuesto"
         }
     },
     "collections": {
