@@ -1,11 +1,36 @@
 "use client";
 
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "./Nav.module.css";
 import { usePathname } from "next/navigation";
 
 const Nav = ({ lang }: { lang: string }) => {
     const pathname = usePathname();
+    const [theme, setTheme] = useState<"dark" | "light">("dark");
+
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    useEffect(() => {
+        setMenuOpen(false);
+    }, [pathname]);
+
+    useEffect(() => {
+        const savedTheme = localStorage.getItem("theme") as "dark" | "light" | null;
+        if (savedTheme) {
+            setTheme(savedTheme);
+            document.documentElement.setAttribute("data-theme", savedTheme);
+        }
+    }, []);
+
+    const toggleTheme = () => {
+        const newTheme = theme === "dark" ? "light" : "dark";
+        setTheme(newTheme);
+        document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+    };
+
+    const toggleMenu = () => setMenuOpen(!menuOpen);
 
     const menu = {
         en: {
@@ -39,7 +64,17 @@ const Nav = ({ lang }: { lang: string }) => {
             <Link href={`/${lang}`} className={styles.logo}>
                 MICLOSS
             </Link>
-            <div className={styles.links}>
+
+            <button
+                className={`${styles.hamburger} ${menuOpen ? styles.open : ""}`}
+                onClick={toggleMenu}
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div className={`${styles.links} ${menuOpen ? styles.open : ""}`}>
                 {links.map((link) => (
                     <Link
                         key={link.path}
@@ -54,6 +89,13 @@ const Nav = ({ lang }: { lang: string }) => {
                     <span>/</span>
                     <Link href={pathname.replace(`/${lang}`, "/es")} className={lang === "es" ? styles.activeLang : ""}>ES</Link>
                 </div>
+                <button
+                    onClick={toggleTheme}
+                    className={styles.themeToggle}
+                    aria-label="Toggle Theme"
+                >
+                    {theme === "dark" ? "☼" : "☾"}
+                </button>
             </div>
         </nav>
     );
