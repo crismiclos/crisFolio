@@ -7,7 +7,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 30px 5vw;
-    z-index: 1000;
+    z-index: 2000;
     background: transparent;
     backdrop-filter: blur(10px);
 }
@@ -16,12 +16,14 @@
     font-weight: 900;
     letter-spacing: 0.2em;
     font-size: 1.2rem;
+    z-index: 2100;
 }
 
 .links {
     display: flex;
     gap: 2rem;
     align-items: center;
+    transition: var(--transition);
 }
 
 .hamburger {
@@ -31,7 +33,7 @@
     cursor: pointer;
     flex-direction: column;
     gap: 6px;
-    z-index: 1100;
+    z-index: 2100;
 }
 
 .hamburger span {
@@ -82,4 +84,74 @@
 .link:hover::after,
 .active::after {
     width: 100%;
+}
+
+.langSwitcher {
+    display: flex;
+    gap: 0.8rem;
+    font-size: 0.7rem;
+    color: var(--muted-color);
+    margin-left: 1rem;
+}
+
+.activeLang {
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.themeToggle {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    margin-left: 2rem;
+    transition: var(--transition);
+    opacity: 0.6;
+}
+
+.themeToggle:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+@media (max-width: 1024px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: var(--bg-color);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 2050;
+    }
+
+    .links.open {
+        right: 0;
+    }
+
+    .link {
+        font-size: 2rem;
+        margin: 1rem 0;
+    }
+
+    .langSwitcher {
+        margin: 3rem 0;
+        font-size: 1.2rem;
+    }
+
+    .themeToggle {
+        margin: 0;
+        transform: scale(1.5);
+    }
 }
