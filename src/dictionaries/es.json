@@ -1,0 +1,68 @@
+{
+    "nav": {
+        "home": "Inicio",
+        "collections": "Colecciones",
+        "budget": "Presupuesto",
+        "contact": "Contacto"
+    },
+    "home": {
+        "hero": {
+            "capturing": "CAPTURANDO",
+            "unseen": " LO INVISIBLE",
+            "subtitle": "Un viaje a través de la luz, las sombras y los momentos intermedios."
+        },
+        "manifesto": {
+            "title": "Manifiesto",
+            "text": "La fotografía no se trata de ver, sino de sentir. Si no puedes sentir lo que estás mirando, nunca lograrás que otros sientan nada al ver tus fotos."
+        },
+        "featured": {
+            "title": "Colecciones Destacadas"
+        },
+        "recognition": {
+            "title": "Reconocimiento"
+        }
+    },
+    "collections": {
+        "title": "Colecciones",
+        "subtitle": "Explora historias curadas a través del lente.",
+        "photographs": "Fotografías",
+        "back": "Ver todas las colecciones",
+        "more": "¿Quieres ver más?",
+        "modes": {
+            "cinema": "Cine",
+            "masonry": "Mosaico"
+        },
+        "meta": {
+            "date": "Fecha",
+            "location": "Ubicación",
+            "gear": "Equipo",
+            "story": "La Historia"
+        }
+    },
+    "contact": {
+        "title": "Hablemos",
+        "subtitle": "Disponible para encargos y colaboraciones en todo el mundo.",
+        "inquiries": "Consultas",
+        "social": "Redes",
+        "location": "Ubicación",
+        "location_text": "Basado en Madrid, España. Trabajando globalmente.",
+        "form": {
+            "name": "Nombre",
+            "email": "Correo",
+            "message": "Mensaje",
+            "submit": "Enviar Mensaje"
+        }
+    },
+    "budget": {
+        "title": "Solicitud de Presupuesto",
+        "subtitle": "Cuéntanos sobre tu proyecto y te responderemos con una cotización personalizada.",
+        "form": {
+            "name": "Nombre Completo",
+            "email": "Correo Electrónico",
+            "session": "Tipo de Sesión",
+            "location": "Ubicación del Evento",
+            "details": "Detalles del Proyecto",
+            "submit": "Solicitar Presupuesto"
+        }
+    }
+}

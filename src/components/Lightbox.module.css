@@ -1,0 +1,166 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.98);
+    backdrop-filter: blur(20px);
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 3rem;
+    font-weight: 200;
+    cursor: pointer;
+    z-index: 2010;
+    transition: var(--transition);
+}
+
+.closeBtn:hover {
+    transform: rotate(90deg);
+    color: var(--muted-color);
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    height: 100%;
+    padding: 0 5vw;
+}
+
+.navBtn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    z-index: 2010;
+}
+
+.navBtn:hover {
+    background: white;
+    color: black;
+    border-color: white;
+}
+
+.imageContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.imageContainer.horizontal {
+    width: min(90vw, 1200px);
+    aspect-ratio: 16/9;
+}
+
+.imageContainer.vertical {
+    height: min(85vh, 900px);
+    aspect-ratio: 2/3;
+}
+
+.imagePlaceholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+    border: 1px solid var(--border);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.meta {
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.meta span {
+    font-size: 0.7rem;
+    color: var(--muted-color);
+    letter-spacing: 0.2em;
+}
+
+.meta h3 {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.thumbnails {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    gap: 8px;
+}
+
+.thumb {
+    width: 30px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+}
+
+.thumb.active {
+    background: white;
+    width: 50px;
+}
+
+@media (max-width: 768px) {
+    .navBtn {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .navBtn:first-of-type {
+        left: 10px;
+    }
+
+    .navBtn:last-of-type {
+        right: 10px;
+    }
+
+    .imageContainer.horizontal {
+        width: 95vw;
+    }
+
+    .imageContainer.vertical {
+        height: 80vh;
+    }
+
+    .closeBtn {
+        top: 20px;
+        right: 20px;
+        font-size: 2.5rem;
+    }
+}

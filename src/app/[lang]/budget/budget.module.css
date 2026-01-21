@@ -1,0 +1,88 @@
+.container {
+    padding-top: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    width: 100%;
+    max-width: 800px;
+}
+
+.title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: var(--muted-color);
+    margin-bottom: 4rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.inputGroup label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--muted-color);
+}
+
+.inputGroup input,
+.inputGroup select,
+.inputGroup textarea {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    padding: 1rem;
+    color: white;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.inputGroup input:focus,
+.inputGroup select:focus,
+.inputGroup textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.submitBtn {
+    margin-top: 2rem;
+    background: white;
+    color: black;
+    border: none;
+    padding: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.submitBtn:hover {
+    background: var(--muted-color);
+    transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

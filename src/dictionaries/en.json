@@ -1,0 +1,68 @@
+{
+    "nav": {
+        "home": "Home",
+        "collections": "Collections",
+        "budget": "Budget",
+        "contact": "Contact"
+    },
+    "home": {
+        "hero": {
+            "capturing": "CAPTURING",
+            "unseen": "THE UNSEEN",
+            "subtitle": "A journey through light, shadow, and the moments between."
+        },
+        "manifesto": {
+            "title": "Manifesto",
+            "text": "Photography is not about seeing, it's about feeling. If you can't feel what you're looking at, then you're never going to get others to feel anything when they look at your pictures."
+        },
+        "featured": {
+            "title": "Featured Collections"
+        },
+        "recognition": {
+            "title": "Recognition"
+        }
+    },
+    "collections": {
+        "title": "Collections",
+        "subtitle": "Explore curated stories through the lens.",
+        "photographs": "Photographs",
+        "back": "View all collections",
+        "more": "Want to see more?",
+        "modes": {
+            "cinema": "Cinema",
+            "masonry": "Masonry"
+        },
+        "meta": {
+            "date": "Date",
+            "location": "Location",
+            "gear": "Equipment",
+            "story": "The Story"
+        }
+    },
+    "contact": {
+        "title": "Let's talk",
+        "subtitle": "Available for commissions and collaborations worldwide.",
+        "inquiries": "Inquiries",
+        "social": "Social",
+        "location": "Location",
+        "location_text": "Based in Madrid, Spain. Working Globally.",
+        "form": {
+            "name": "Name",
+            "email": "Email",
+            "message": "Message",
+            "submit": "Send Message"
+        }
+    },
+    "budget": {
+        "title": "Budget Request",
+        "subtitle": "Tell us about your project and we'll get back to you with a tailored quote.",
+        "form": {
+            "name": "Full Name",
+            "email": "Email Address",
+            "session": "Session Type",
+            "location": "Event Location",
+            "details": "Project Details",
+            "submit": "Request Quote"
+        }
+    }
+}

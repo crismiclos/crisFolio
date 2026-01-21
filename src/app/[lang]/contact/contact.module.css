@@ -1,0 +1,113 @@
+.container {
+    padding-top: 150px;
+}
+
+.header {
+    margin-bottom: 5rem;
+    padding: 0 5vw;
+}
+
+.title {
+    font-size: clamp(4rem, 12vw, 10rem);
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    line-height: 0.8;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--muted-color);
+    margin-top: 2rem;
+    max-width: 500px;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5vw;
+    padding: 0 5vw;
+    margin-bottom: 8rem;
+}
+
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.infoBlock h3 {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--muted-color);
+    margin-bottom: 1rem;
+}
+
+.infoBlock p,
+.infoBlock a {
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.socialLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.socialLinks a:hover {
+    padding-left: 10px;
+    color: var(--muted-color);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.inputGroup {
+    position: relative;
+}
+
+.inputGroup input,
+.inputGroup textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+    color: white;
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.inputGroup input:focus,
+.inputGroup textarea:focus {
+    outline: none;
+    border-bottom-color: var(--accent-color);
+}
+
+.submitBtn {
+    align-self: flex-start;
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    color: white;
+    padding: 1.5rem 4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.submitBtn:hover {
+    background: white;
+    color: black;
+}
+
+@media (max-width: 1024px) {
+    .content {
+        grid-template-columns: 1fr;
+        gap: 5rem;
+    }
+}

@@ -1,0 +1,181 @@
+.main {
+    width: 100%;
+}
+
+.hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+}
+
+.heroContent {
+    z-index: 2;
+}
+
+.title {
+    font-size: clamp(3rem, 10vw, 8rem);
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.titleLine {
+    display: block;
+}
+
+.indent {
+    padding-left: 2rem;
+    color: var(--muted-color);
+}
+
+.subtitle {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: var(--muted-color);
+    max-width: 400px;
+}
+
+.heroImage {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageBox {
+    width: 100%;
+    height: 100%;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(10px);
+    transform: rotate(5deg);
+    transition: var(--transition);
+}
+
+.imageBox:hover {
+    transform: rotate(0deg);
+}
+
+.manifesto {
+    align-items: center;
+    text-align: center;
+}
+
+.sectionTitle {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--muted-color);
+    margin-bottom: 3rem;
+}
+
+.manifestoText {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    max-width: 800px;
+    line-height: 1.2;
+}
+
+.featuredGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 4rem;
+}
+
+.featuredItem {
+    position: relative;
+    transition: var(--transition);
+}
+
+.featuredImage {
+    width: 100%;
+    aspect-ratio: 4/5;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    transition: var(--transition);
+}
+
+.featuredItem:hover .featuredImage {
+    border-color: var(--accent-color);
+    transform: scale(0.98);
+}
+
+.featuredMeta {
+    margin-top: 2rem;
+}
+
+.featuredMeta h3 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.featuredMeta p {
+    font-size: 0.8rem;
+    color: var(--muted-color);
+    margin-top: 0.5rem;
+}
+
+.awardsList {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.award {
+    display: grid;
+    grid-template-columns: 100px 1fr 1fr;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: var(--transition);
+}
+
+.award:hover {
+    border-color: var(--accent-color);
+}
+
+.award .year {
+    font-weight: 200;
+    color: var(--muted-color);
+}
+
+.award .name {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.award .place {
+    text-align: right;
+    color: var(--muted-color);
+}
+
+@media (max-width: 768px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .indent {
+        padding-left: 0;
+    }
+
+    .featuredGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .award {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        text-align: left;
+    }
+
+    .award .place {
+        text-align: left;
+    }
+}

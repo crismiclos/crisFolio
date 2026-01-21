@@ -1,0 +1,54 @@
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 5vw;
+    z-index: 1000;
+    background: transparent;
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-weight: 900;
+    letter-spacing: 0.2em;
+    font-size: 1.2rem;
+}
+
+.links {
+    display: flex;
+    gap: 2rem;
+}
+
+.link {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted-color);
+    transition: var(--transition);
+    position: relative;
+}
+
+.link:hover,
+.active {
+    color: var(--text-color);
+}
+
+.link::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--text-color);
+    transition: var(--transition);
+}
+
+.link:hover::after,
+.active::after {
+    width: 100%;
+}
