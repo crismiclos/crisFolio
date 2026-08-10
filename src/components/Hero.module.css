@@ -4,8 +4,8 @@
     flex-direction: column;
     justify-content: space-between;
     /* Arriba hace falta más aire que en los otros lados: el nav flota fijo y
-       llega hasta los 71px. */
-    padding: clamp(5.5rem, 8vw, 7rem) clamp(2rem, 5vw, 4rem) clamp(2rem, 5vw, 4rem);
+       llega hasta los 71px. Abajo reducimos el padding para conectar con el Manifiesto. */
+    padding: clamp(5.5rem, 8vw, 7rem) clamp(2rem, 5vw, 4rem) 1.5rem;
     text-align: center;
     position: relative;
     overflow: hidden;
