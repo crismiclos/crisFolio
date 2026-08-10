@@ -1,0 +1,118 @@
+.section {
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    padding: clamp(5rem, 12vh, 9rem) clamp(2rem, 5vw, 4rem);
+}
+
+.inner {
+    width: min(92vw, 1400px);
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    gap: clamp(2.5rem, 7vw, 6rem);
+    align-items: center;
+}
+
+/* ---- El recorte y el gesto de subida ---- */
+
+/* Ventana del recorte. El padding superior deja sitio a tildes y ascendentes;
+   sin él, overflow:hidden las cortaría. El margen negativo lo devuelve al flujo. */
+.recorte {
+    display: block;
+    overflow: hidden;
+    padding-top: 0.14em;
+    margin-top: -0.14em;
+}
+
+.sube {
+    display: block;
+    transform: translateY(115%);
+}
+
+/* La animación solo arranca cuando la sección ya está en pantalla. */
+.visible .sube {
+    animation: subir 0.95s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+@keyframes subir {
+    to { transform: translateY(0); }
+}
+
+/* ---- Columna del logo ---- */
+/* Bloque, no flex: como flex, el recorte se encogía al contenido y el logo
+   (width:100%) se resolvía a cero. */
+.logoCol {
+    display: block;
+}
+
+.logo {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Noche por defecto; el atributo data-theme="light" invierte el par. */
+.logoDia { display: none; }
+
+:global([data-theme="light"]) .logoNoche { display: none; }
+:global([data-theme="light"]) .logoDia { display: block; }
+
+/* Al logo se le da más recorrido: entra con más peso que el texto. */
+.logoCol .sube {
+    transform: translateY(125%);
+}
+
+.visible .logoCol .sube {
+    animation-duration: 1.15s;
+}
+
+/* ---- Columna de texto ---- */
+.textoCol {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted-color);
+    margin-bottom: 2rem;
+}
+
+.parrafo {
+    font-size: clamp(1.05rem, 1.7vw, 1.55rem);
+    line-height: 1.5;
+    letter-spacing: -0.005em;
+    color: var(--text-color);
+    margin-bottom: 1.15rem;
+    max-width: 46ch;
+}
+
+.firma {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted-color);
+}
+
+@media (max-width: 900px) {
+    .inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .logo { width: min(100%, 320px); }
+
+    .label { margin-bottom: 1.25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sube,
+    .logoCol .sube {
+        transform: none;
+        animation: none;
+    }
+}

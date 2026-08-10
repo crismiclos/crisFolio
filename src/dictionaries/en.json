@@ -1,40 +1,61 @@
 {
     "nav": {
         "home": "Home",
-        "collections": "Collections",
+        "collections": "Work",
         "budget": "Budget",
         "contact": "Contact"
     },
     "home": {
         "hero": {
-            "capturing": "CAPTURING",
-            "unseen": "THE UNSEEN",
-            "subtitle": "A journey through light, shadow, and the moments between."
-        },
-        "brands": {
-            "title": "Trusted by"
+            "title": "Less noise, more vision.",
+            "subtitle": "I'm Miclos. In a world saturated with content, I direct, shoot and produce the work that actually connects.",
+            "cta_primary": "Book a Diagnosis",
+            "cta_secondary": "See the Work"
         },
         "manifesto": {
-            "title": "Manifesto",
-            "text": "Photography is not about seeing, it's about feeling. If you can't feel what you're looking at, then you're never going to get others to feel anything when they look at your pictures."
+            "label": "01 / MANIFESTO",
+            "parrafos": [
+                "In a market producing more noise than ever, my job is to make the good work look good.",
+                "Nice-looking content with no decision behind it sells nothing, says nothing, is remembered by no one.",
+                "Every piece is the proof that there was a real intention behind it."
+            ],
+            "signature": "— Cristofher Miclos"
         },
-        "featured": {
-            "title": "Featured Collections",
-            "view_all": "View all work"
-        },
-        "recognition": {
-            "title": "Recognition"
-        },
-        "cta": {
-            "title": "Ready to bring your vision to life?",
-            "button": "Request a Quote"
+        "services": {
+            "label": "02 / SERVICES",
+            "intent": "I don't make content to fill a grid. I make images and video built from strategy, so your brand looks as solid as your product actually is. I bring strategic judgment and technical execution together to close the gap between what gets planned and what gets published.",
+            "focus": "Focus",
+            "purpose": "Purpose",
+            "items": [
+                {
+                    "num": "01",
+                    "title": "Commercial & editorial photography",
+                    "focus": "Food, product, fashion, lifestyle and test model.",
+                    "purpose": "Photography built to raise perceived value and justify the price of your product or service.",
+                    "cta": "See work / Get a quote"
+                },
+                {
+                    "num": "02",
+                    "title": "Reels & commercial video",
+                    "focus": "Ad spots, B2B commercials, dynamic reels, sound design and 4K colour grading.",
+                    "purpose": "Video production optimised for engagement and conversion on social and paid media.",
+                    "cta": "See reels / Get a quote"
+                },
+                {
+                    "num": "03",
+                    "title": "Creative direction & campaigns",
+                    "focus": "Brand Core Sprint, verbal identity, full visual system and campaign direction end to end.",
+                    "purpose": "Full-service partnership for brands after an international standard and total visual coherence.",
+                    "cta": "Book a Sprint / Diagnosis"
+                }
+            ]
         }
     },
     "collections": {
-        "title": "Collections",
+        "title": "Work",
         "subtitle": "Explore curated stories through the lens.",
         "photographs": "Photographs",
-        "back": "View all collections",
+        "back": "View all work",
         "more": "Want to see more?",
         "modes": {
             "cinema": "Cinema",
@@ -43,7 +64,7 @@
         "meta": {
             "date": "Date",
             "location": "Location",
-            "gear": "Equipment",
+            "gear": "Gear",
             "story": "The Story"
         }
     },
@@ -53,7 +74,7 @@
         "inquiries": "Inquiries",
         "social": "Social",
         "location": "Location",
-        "location_text": "Based in Madrid, Spain. Working Globally.",
+        "location_text": "Based in Caracas, Venezuela. Working globally.",
         "form": {
             "name": "Name",
             "email": "Email",
@@ -62,8 +83,8 @@
         }
     },
     "budget": {
-        "title": "Budget Request",
-        "subtitle": "Tell us about your project and we'll get back to you with a tailored quote.",
+        "title": "Request a Quote",
+        "subtitle": "Tell us about your project and we'll come back with a tailored quote.",
         "form": {
             "name": "Full Name",
             "email": "Email Address",

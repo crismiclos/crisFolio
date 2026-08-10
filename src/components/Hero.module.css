@@ -1,0 +1,139 @@
+.hero {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Arriba hace falta más aire que en los otros lados: el nav flota fijo y
+       llega hasta los 71px. */
+    padding: clamp(5.5rem, 8vw, 7rem) clamp(2rem, 5vw, 4rem) clamp(2rem, 5vw, 4rem);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    /* Blanco y negro heredado del tema: el hero cambia con el interruptor
+       día/noche en vez de imponer su propio color. */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.topBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin-inline: auto;
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.heroContent {
+    max-width: 1400px;
+    margin-inline: auto;
+    margin-block: auto;
+    padding-block: 2rem;
+}
+
+.title {
+    /* Gótica condensada de cartel: es la forma de la letra, no el peso, lo
+       que da el carácter de la referencia. Anton trae un solo grosor (400),
+       que es su negra; pedirle 900 provocaría una negrita falsa. */
+    font-family: var(--font-anton), var(--font-inter), sans-serif;
+    font-size: clamp(3.5rem, 11.5vw, 13rem);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.005em;
+    /* Anton lleva las tildes muy altas (1.108em sobre la línea base), bastante
+       más que Inter. 1.113 mantiene el 0.5% de separación con la línea de
+       arriba. Si el titular se quedara sin tildes, admitiría bajar a ~0.95. */
+    line-height: 1.113;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Cada línea es la ventana del recorte. El padding superior deja sitio a las
+   tildes, que sobresalen de la caja de línea; sin él, overflow:hidden las
+   decapitaría. El margen negativo devuelve ese espacio al flujo. */
+.titleLine {
+    display: block;
+    overflow: hidden;
+    padding-top: 0.18em;
+    margin-top: -0.18em;
+}
+
+/* El texto sube desde debajo del recorte: acelera y frena (easeInOut). */
+.titleInner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.2em;
+    transform: translateY(110%);
+    animation: subir 1.05s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+@keyframes subir {
+    to { transform: translateY(0); }
+}
+
+.photoMask {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* Proporciones tomadas de la referencia Super 8: alto ≈ 1.09 de la altura
+       de mayúscula y ancho ≈ 1.46 del alto. En em, para que escale con el
+       titular sin tener que sincronizar dos clamp() distintos. */
+    height: 0.8em;
+    width: 1.17em;
+    border-radius: 0.15em;
+    overflow: hidden;
+    border: 2px solid color-mix(in srgb, currentColor 40%, transparent);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    margin-inline: 0.1em;
+    vertical-align: middle;
+
+    /* Foto de perfil. Si el archivo aún no está, queda el degradado neutro
+       en vez de un icono de imagen rota. */
+    background-image: url("/perfil-miclos.jpg"),
+        linear-gradient(150deg, #333 0%, #151515 60%, #262626 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.subtitle {
+    font-size: clamp(0.95rem, 1.6vw, 1.35rem);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-color);
+    max-width: 800px;
+    margin-inline: auto;
+    margin-top: 2.5rem;
+    line-height: 1.45;
+    opacity: 0;
+    animation: aparecer 0.8s ease 0.85s forwards;
+}
+
+@keyframes aparecer {
+    to { opacity: 0.95; }
+}
+
+.bottomBar {
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .titleInner {
+        transform: none;
+        animation: none;
+    }
+
+    .subtitle {
+        opacity: 0.95;
+        animation: none;
+    }
+}

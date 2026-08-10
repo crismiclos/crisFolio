@@ -1,5 +1,5 @@
 .container {
-    padding-top: 50px;
+    padding-top: var(--nav-clearance);
 }
 
 .header {
@@ -7,11 +7,13 @@
     padding: 0 5vw;
 }
 
+/* Titular canónico de la marca — el resto de cabezales replican esta forma */
 .title {
-    font-size: clamp(4rem, 12vw, 10rem);
-    text-transform: uppercase;
-    letter-spacing: -0.05em;
-    line-height: 0.8;
+    font-size: var(--title-xl);
+    font-weight: var(--title-weight);
+    text-transform: var(--title-transform);
+    letter-spacing: var(--title-tracking);
+    line-height: var(--title-leading);
 }
 
 .subtitle {

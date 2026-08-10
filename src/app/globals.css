@@ -7,6 +7,24 @@
   --border: rgba(255, 255, 255, 0.1);
   --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   --invert: 0;
+
+  /* ---- Sistema tipográfico ----
+     Una sola familia y un solo tratamiento de titular: el de Contacto.
+     Los cabezales se diferencian solo en escala, nunca en forma. */
+  --title-weight: 700;
+  --title-transform: uppercase;
+  --title-tracking: -0.05em;
+  /* 0.92 y no 0.8: en mayúsculas el español lleva tildes (MÁS, VISIÓN) que
+     con 0.8 chocan contra la línea superior. En titulares de una sola línea
+     el valor es indistinguible. */
+  --title-leading: 0.92;
+
+  --title-xl: clamp(4rem, 12vw, 10rem);  /* portada de página */
+  --title-lg: clamp(3rem, 9vw, 7rem);    /* páginas interiores */
+
+  /* Aire bajo el nav flotante (top 1.25rem + alto ≈ 66px) para que ningún
+     titular quede pisado. Mismo valor en todas las páginas. */
+  --nav-clearance: 150px;
 }
 
 [data-theme="light"] {

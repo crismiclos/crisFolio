@@ -1,95 +1,78 @@
 import styles from "./page.module.css";
 import { getDictionary } from "@/lib/dictionary";
 import Link from "next/link";
+import Manifesto from "@/components/Manifesto";
+import Hero from "@/components/Hero";
 
 export default async function Home({ params }: { params: Promise<{ lang: "en" | "es" }> }) {
     const { lang } = await params;
     const dict = await getDictionary(lang);
+    const home = dict.home;
 
-    const brands = ["Vogue", "Nike", "Apple", "National Geographic", "Sony", "BMW", "Zara", "Vogue", "Nike", "Apple", "National Geographic", "Sony", "BMW", "Zara"];
+    // Clientes reales (Brand Core). Se duplican para que la cinta sea continua.
+    const brands = [
+        "ALÓ CARACAS",
+        "PASTEUR DE VENEZUELA",
+        "CONTROL BODY",
+        "BANCAMIGA",
+        "BEGREAT BARBER STUDIO",
+        "MHP SALES MANAGER",
+    ];
 
     return (
         <main className={styles.main}>
-            <section className={styles.hero}>
-                <div className={styles.heroContent}>
-                    <h1 className={styles.title}>
-                        <span className={styles.titleLine}>{dict.home.hero.capturing}</span>
-                        <span className={styles.titleLine + " " + styles.indent}>{dict.home.hero.unseen}</span>
-                    </h1>
-                    <p className={styles.subtitle}>
-                        {dict.home.hero.subtitle}
-                    </p>
-                </div>
-                <div className={styles.heroImage}>
-                    <div className={styles.imageBox}></div>
+            {/* ---------- HERO CON DISEÑO REFERENCIA SUPER 8 ---------- */}
+            <Hero title={home.hero.title} subtitle={home.hero.subtitle} />
+
+            {/* ---------- LOGO + MANIFIESTO (revelado en cascada) ---------- */}
+            <Manifesto
+                label={home.manifesto.label}
+                parrafos={home.manifesto.parrafos}
+                signature={home.manifesto.signature}
+            />
+
+            {/* ---------- CARTA DE PRESENTACIÓN + SERVICIOS ---------- */}
+            <section className={styles.services}>
+                <div className={styles.servicesInner}>
+                    <p className={styles.sectionLabel}>{home.services.label}</p>
+                    <p className={styles.intent}>{home.services.intent}</p>
+
+                    <div className={styles.serviceList}>
+                        {home.services.items.map((s: {
+                            num: string; title: string; focus: string; purpose: string; cta: string;
+                        }) => (
+                            <article key={s.num} className={styles.service}>
+                                <span className={styles.serviceNum}>{s.num}</span>
+                                <div className={styles.serviceBody}>
+                                    <h3 className={styles.serviceTitle}>{s.title}</h3>
+                                    <dl className={styles.serviceMeta}>
+                                        <dt>{home.services.focus}</dt>
+                                        <dd>{s.focus}</dd>
+                                        <dt>{home.services.purpose}</dt>
+                                        <dd>{s.purpose}</dd>
+                                    </dl>
+                                </div>
+                                <Link href={`/${lang}/budget`} className={styles.serviceCta}>
+                                    {s.cta}
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                                        <path d="M5 12h14M13 6l6 6-6 6" />
+                                    </svg>
+                                </Link>
+                            </article>
+                        ))}
+                    </div>
                 </div>
             </section>
 
-            <section className={styles.brands}>
+            {/* ---------- MARQUESINA DE CLIENTES (cierre de página) ---------- */}
+            <section className={styles.brands} aria-label="Clientes">
                 <div className={styles.brandsMarquee}>
                     {brands.concat(brands).map((brand, i) => (
-                        <span key={i} className={styles.brandItem}>{brand}</span>
+                        <span key={i} className={styles.brandItem} aria-hidden={i >= brands.length}>
+                            {brand}
+                        </span>
                     ))}
                 </div>
-            </section>
-
-            <section className={styles.manifesto}>
-                <h2 className={styles.sectionTitle}>{dict.home.manifesto.title}</h2>
-                <p className={styles.manifestoText}>
-                    {dict.home.manifesto.text}
-                </p>
-            </section>
-
-            <section className={styles.featured}>
-                <h2 className={styles.sectionTitle}>{dict.home.featured.title}</h2>
-                <div className={styles.featuredGrid}>
-                    <Link href={`/${lang}/collections/urban-serenity`} className={styles.featuredItem}>
-                        <div className={styles.featuredImageWrapper}>
-                            <div className={styles.featuredImage}></div>
-                        </div>
-                        <div className={styles.featuredMeta}>
-                            <h3>Urban Serenity</h3>
-                            <span className={styles.viewWork}>{dict.home.featured.view_all}</span>
-                        </div>
-                    </Link>
-                    <Link href={`/${lang}/collections/silent-stories`} className={styles.featuredItem}>
-                        <div className={styles.featuredImageWrapper}>
-                            <div className={styles.featuredImage}></div>
-                        </div>
-                        <div className={styles.featuredMeta}>
-                            <h3>Silent Stories</h3>
-                            <span className={styles.viewWork}>{dict.home.featured.view_all}</span>
-                        </div>
-                    </Link>
-                </div>
-            </section>
-
-            <section className={styles.recognition}>
-                <h2 className={styles.sectionTitle}>{dict.home.recognition.title}</h2>
-                <div className={styles.awardsList}>
-                    <div className={styles.award}>
-                        <span className={styles.year}>2025</span>
-                        <span className={styles.name}>IPA - International Photography Awards</span>
-                        <span className={styles.place}>1st Place, Street Photography</span>
-                    </div>
-                    <div className={styles.award}>
-                        <span className={styles.year}>2024</span>
-                        <span className={styles.name}>Sony World Photography Awards</span>
-                        <span className={styles.place}>Finalist, Architecture</span>
-                    </div>
-                    <div className={styles.award}>
-                        <span className={styles.year}>2023</span>
-                        <span className={styles.name}>Leica Oskar Barnack Award</span>
-                        <span className={styles.place}>Nominee</span>
-                    </div>
-                </div>
-            </section>
-
-            <section className={styles.cta}>
-                <h2 className={styles.ctaTitle}>{dict.home.cta.title}</h2>
-                <Link href={`/${lang}/budget`} className={styles.ctaButton}>
-                    {dict.home.cta.button}
-                </Link>
             </section>
         </main>
     );

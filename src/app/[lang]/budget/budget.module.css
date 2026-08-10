@@ -1,5 +1,5 @@
 .container {
-    padding-top: 50px;
+    padding-top: var(--nav-clearance);
     display: flex;
     justify-content: center;
     padding-bottom: 15rem;
@@ -12,11 +12,12 @@
 }
 
 .title {
-    font-family: var(--font-outfit), sans-serif;
-    font-size: clamp(3rem, 8vw, 5rem);
-    text-transform: uppercase;
-    letter-spacing: -0.05em;
-    margin-bottom: 0.5rem;
+    font-size: var(--title-lg);
+    font-weight: var(--title-weight);
+    text-transform: var(--title-transform);
+    letter-spacing: var(--title-tracking);
+    line-height: var(--title-leading);
+    margin-bottom: 1.25rem;
 }
 
 .subtitle {

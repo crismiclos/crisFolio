@@ -1,40 +1,61 @@
 {
     "nav": {
         "home": "Inicio",
-        "collections": "Colecciones",
+        "collections": "Trabajos",
         "budget": "Presupuesto",
         "contact": "Contacto"
     },
     "home": {
         "hero": {
-            "capturing": "CAPTURANDO",
-            "unseen": " LO INVISIBLE",
-            "subtitle": "Un viaje a través de la luz, las sombras y los momentos intermedios."
-        },
-        "brands": {
-            "title": "Clientes"
+            "title": "Menos ruido, más visión.",
+            "subtitle": "Soy Miclos. En un mundo saturado de contenido, dirijo, fotografío y produzco lo que realmente conecta.",
+            "cta_primary": "Agendar Diagnóstico",
+            "cta_secondary": "Ver Trabajos"
         },
         "manifesto": {
-            "title": "Manifiesto",
-            "text": "La fotografía no se trata de ver, sino de sentir. Si no puedes sentir lo que estás mirando, nunca lograrás que otros sientan nada al ver tus fotos."
+            "label": "01 / MANIFIESTO",
+            "parrafos": [
+                "En un mercado que produce más ruido que nunca, mi trabajo es que lo bueno se vea bueno.",
+                "Un contenido bonito sin una decisión detrás no vende nada, no comunica nada, no se recuerda.",
+                "Cada pieza es la prueba de que hubo una intención real detrás."
+            ],
+            "signature": "— Cristofher Miclos"
         },
-        "featured": {
-            "title": "Colecciones Destacadas",
-            "view_all": "Ver todo el trabajo"
-        },
-        "recognition": {
-            "title": "Reconocimiento"
-        },
-        "cta": {
-            "title": "¿Listo para dar vida a tu visión?",
-            "button": "Solicitar Presupuesto"
+        "services": {
+            "label": "02 / SERVICIOS",
+            "intent": "No creo contenido por cumplir una grilla. Creo imágenes y videos pensados desde la estrategia para que tu marca se vea tan sólida como la calidad de tu producto. Unifico el criterio estratégico con la ejecución técnica para eliminar la brecha entre lo que se planea y lo que se publica.",
+            "focus": "Enfoque",
+            "purpose": "Propósito",
+            "items": [
+                {
+                    "num": "01",
+                    "title": "Fotografía comercial & editorial",
+                    "focus": "Gastronomía, producto, moda, lifestyle y test model.",
+                    "purpose": "Fotografía pensada para elevar la percepción de valor y justificar el precio de tu producto o servicio.",
+                    "cta": "Ver trabajos / Cotizar fotos"
+                },
+                {
+                    "num": "02",
+                    "title": "Reels & contenido comercial (video)",
+                    "focus": "Spots publicitarios, anuncios B2B, reels dinámicos, diseño sonoro y corrección de color en 4K.",
+                    "purpose": "Producción en video optimizada para enganche y conversión en redes y pauta digital.",
+                    "cta": "Ver reels / Cotizar video"
+                },
+                {
+                    "num": "03",
+                    "title": "Dirección creativa & campañas",
+                    "focus": "Brand Core Sprint, identidad verbal, sistema visual completo y dirección de campaña de principio a fin.",
+                    "purpose": "Acompañamiento integral para marcas que buscan el estándar internacional y la máxima coherencia visual.",
+                    "cta": "Agendar Sprint / Diagnóstico"
+                }
+            ]
         }
     },
     "collections": {
-        "title": "Colecciones",
+        "title": "Trabajos",
         "subtitle": "Explora historias curadas a través del lente.",
         "photographs": "Fotografías",
-        "back": "Ver todas las colecciones",
+        "back": "Ver todos los trabajos",
         "more": "¿Quieres ver más?",
         "modes": {
             "cinema": "Cine",
@@ -53,7 +74,7 @@
         "inquiries": "Consultas",
         "social": "Redes",
         "location": "Ubicación",
-        "location_text": "Basado en Madrid, España. Trabajando globalmente.",
+        "location_text": "Basado en Caracas, Venezuela. Trabajando globalmente.",
         "form": {
             "name": "Nombre",
             "email": "Correo",

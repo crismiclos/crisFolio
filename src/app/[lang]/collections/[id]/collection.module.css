@@ -1,5 +1,5 @@
 .container {
-    padding-top: 50px;
+    padding-top: var(--nav-clearance);
 }
 
 .header {
@@ -11,11 +11,12 @@
 }
 
 .title {
-    font-family: var(--font-outfit), sans-serif;
-    font-size: clamp(3rem, 6vw, 5rem);
-    text-transform: uppercase;
+    font-size: var(--title-lg);
+    font-weight: var(--title-weight);
+    text-transform: var(--title-transform);
+    letter-spacing: var(--title-tracking);
+    line-height: var(--title-leading);
     margin-bottom: 1.5rem;
-    letter-spacing: -0.02em;
 }
 
 .description {

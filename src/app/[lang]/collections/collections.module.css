@@ -8,10 +8,11 @@
 }
 
 .title {
-    font-size: clamp(3rem, 8vw, 6rem);
-    font-weight: 200;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    font-size: var(--title-xl);
+    font-weight: var(--title-weight);
+    text-transform: var(--title-transform);
+    letter-spacing: var(--title-tracking);
+    line-height: var(--title-leading);
 }
 
 .subtitle {
