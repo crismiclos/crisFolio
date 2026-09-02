@@ -27,5 +27,6 @@ export function middleware(request: NextRequest) {
 export const config = {
     // El `.*\\..*` excluye cualquier ruta con extensión: sin él, los archivos
     // de public/ (imágenes, vídeo, logo) se redirigían a /es/archivo y daban 404.
-    matcher: ["/((?!api|_next/static|_next/image|fonts|favicon.ico|.*\\..*).*)"],
+    // "portafolio" queda excluida: es una página estática propia, sin i18n.
+    matcher: ["/((?!api|portafolio|_next/static|_next/image|fonts|favicon.ico|.*\\..*).*)"],
 };
